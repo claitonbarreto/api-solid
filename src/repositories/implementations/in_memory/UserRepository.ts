@@ -1,6 +1,6 @@
-import { IRepository } from "../../core/IRepository";
-import { User } from "../../domain/User";
-import { IUserRepository } from "../IUserRepository";
+import { IRepository } from "../../../core/IRepository";
+import { User } from "../../../domain/entities/User";
+import { IUserRepository } from "../../IUserRepository";
 
 export class UserRepository implements IRepository<User>{
 

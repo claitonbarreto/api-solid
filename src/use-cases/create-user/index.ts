@@ -1,5 +1,5 @@
 import { MailtrapMailProvider } from "../../providers/implementations/MailtrapMailProvider";
-import { UserRepository } from "../../repositories/implementations/UserRepository";
+import { UserRepository } from "../../repositories/implementations/typeorm/UserRepository";
 import { CreateUser } from "./create-user";
 import { CreateUserController } from "./create-user.controller";
 

@@ -1,19 +1,16 @@
-import * as crypto from 'crypto'; 
-import { Column } from 'typeorm';
+import { PrimaryColumn } from "typeorm";
+import crypto from "crypto";
 
-export abstract class Entity<T> {
-
-    protected _id: string;
-    public props: T 
+export class Entity<T> {
+    @PrimaryColumn()
+    _id: string;
 
     constructor(props: T, id?: string) {
-        if(!id)
-            this._id = crypto.randomBytes(16).toString('hex');
-
-        this.props = props;
+        this._id = id || crypto.randomBytes(16).toString('hex');
+        Object.assign(this, props);
     }
 
     get id(): string {
         return this._id;
-    }  
+    }
 }

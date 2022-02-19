@@ -1,4 +1,4 @@
-import { User } from "../../domain/User";
+import { User } from "../../domain/entities/User";
 import { IUserRepository } from "../../repositories/IUserRepository";
 
 export class GetUsers {
@@ -7,6 +7,11 @@ export class GetUsers {
     ) {}
 
     async execute(): Promise<User[]> {
-        return await this.userRepository.list();
+        const users =  await this.userRepository.list();
+
+        return users.map(user => User.create({
+            name: user.name,
+            email: user.email,
+        }, user.id));
     }
 }

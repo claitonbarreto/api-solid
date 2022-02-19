@@ -1,4 +1,4 @@
-import { User } from "../../domain/User";
+import { User } from "../../domain/entities/User";
 import { IMailerProvider } from "../../providers/IMailerProvider";
 import { IUserRepository } from "../../repositories/IUserRepository";
 
@@ -17,7 +17,7 @@ export class CreateUser {
 
         await this.userRepository.create(user);
 
-        const { name, email } = user.props;
+        const { name, email } = user;
 
         await this.mailProvider.sendWelcomeEmail({name, email});
     }
