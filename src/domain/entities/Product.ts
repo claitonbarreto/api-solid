@@ -18,7 +18,12 @@ export class Product extends Entity<ProductProps> {
     @Column()
     name: string;
 
-    @Column()
+    @Column({
+        type: 'decimal',
+        precision: 5,
+        scale: 2,
+        default: 0
+    })
     price: number;
 
     @Column()

@@ -1,4 +1,4 @@
-import { ProductRepository } from "../../repositories/implementations/in_memory/ProductRepository";
+import { ProductRepository } from "../../repositories/implementations/typeorm/ProductRepository";
 import { GetProductsController } from "./get-products-controller";
 import { GetProductsUsecase } from "./get-products-use-case";
 

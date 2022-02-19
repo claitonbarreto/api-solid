@@ -3,7 +3,7 @@ import { Product } from "../../../domain/entities/Product";
 
 export class ProductRepository implements IRepository<Product> {
     
-        private products: Product[] = [];
+        private products?: Product[] = [];
     
         create(product: Product): Promise<void> {
             this.products.push(product);
